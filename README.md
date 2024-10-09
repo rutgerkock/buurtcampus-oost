@@ -15,7 +15,8 @@ Wij hebben de opdracht gekregen om de huidige live bieb-in-bloei website te opti
 
 ## Visual
 
-![image](https://github.com/user-attachments/assets/833d78ba-6484-458b-b076-e45e735914df)
+![Untitled (1)](https://github.com/user-attachments/assets/912e6071-3c32-4ff8-a7ea-b475bd5f07ea)
+
 
 ## Kenmerken
 Dit project is opgezet met Sveltekit en met de headless CMS Hygraph. In dit project hebben gewerkt met componenten in Sveltekit.
