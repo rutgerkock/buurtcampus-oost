@@ -29,11 +29,10 @@
     transition: 200ms;
 }
 .harry {
-    .fluit, .sip, .dorst, .blij, .neutraal-2, .gek, .angry, .neutraal, .zonnebril, .sombrero, .sjaal, .billen, .plantWinter,
-    .want_l, .want_r, .breuk, .oog_boos_r, .oog_boos_l {
+    .blij, .angry, .neutraal, .zonnebril, .billen, .plantWinter, .want_l, .want_r, .breuk, .oog_boos_r, .oog_boos_l, .wangen {
         opacity: 0;    
     }
-    .sangry, .neutraal{
+    .neutraal{
         transform-origin: center;
         animation: blink 10s infinite;
     }
@@ -50,19 +49,11 @@
     }
 }
 .harry[data-mood="blij"]{
-    .blij {
+    .blij, .wangen {
         opacity: 1;
     }
     .arm_l {
         animation: wave 20s infinite 1400ms;
-    }
-}
-.harry[data-mood="dorst"]{
-    .dorst{
-        opacity: 1;
-    }
-    .neutraal{
-        opacity: 1;
     }
 }
 .harry[data-mood="verdrietig"]{
@@ -102,14 +93,6 @@
     }
     .angry {
         opacity: 1;
-/* 
-        .oog_l {
-            transform: rotate(45deg);
-        }
-
-        .oog_r {
-            transform: rotate(-45deg);
-        } */
     }
     .oog_boos_r,
     .oog_boos_l {
@@ -120,15 +103,6 @@
         transform-origin: center;
         --normaal: 0deg;
         --tril: 2deg;
-    }
-}
-.harry[data-mood="gek"] {
-    .gek{
-        opacity: 1;
-    }
-
-    .neutraal{
-        opacity: 1;
     }
 }
 
@@ -170,28 +144,12 @@
 }
 
 .harry[data-environment="zonnig"]{
-    .sombrero{
+    .zonnebril{
         opacity: 1;
-    }
-    .plant{
-        opacity: 0;
     }
 }
 .harry[data-environment="koud"]{
-    /* .sjaal{
-        opacity: 1;
-    } */
-    .plantWinter,
-    .want_l,
-    .want_r {
-        opacity: 1;
-    }
-    .mond{
-        opacity: 0;
-    }
-}
-.harry[data-environment="fel"]{
-    .zonnebril{
+    .plantWinter, .want_l, .want_r, .wangen {
         opacity: 1;
     }
 }
