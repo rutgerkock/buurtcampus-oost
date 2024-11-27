@@ -88,15 +88,14 @@
     }
 }
 .harry[data-mood="boos"]{
-    .sip {
-            opacity: 1;
-    }
-    .angry {
-        opacity: 1;
-    }
+    .sip,
+    .angry,
     .oog_boos_r,
     .oog_boos_l {
         opacity: 1;
+    }
+    .oog_l, .oog_r {
+        opacity: 0;
     }
     .pot {
         animation: angry 0.3s infinite;
@@ -151,6 +150,9 @@
 .harry[data-environment="koud"]{
     .plantWinter, .want_l, .want_r, .wangen {
         opacity: 1;
+    }
+    .plant {
+        opacity: 0;
     }
 }
 
