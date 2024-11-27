@@ -31,54 +31,53 @@
             case currentTemp >= numericTextTemp + 15:
                 mood = 'boos';
                 environment = 'zonnig';
-                sentence = 'Het is echt te heet!';
-                detail = ` De temperatuur is nu ${currentTemp.toFixed(0)}°C.`;
+                sentence = `Het is echt te heet! ${currentTemp.toFixed(0)}°C.`;
+                detail = ``;
                 break;
 
             case currentTemp >= numericTextTemp + 10:
                 mood = 'verdrietig';
                 environment = 'zonnig';
-                sentence = 'Het is warm...';
-                detail = ` De temperatuur is nu ${currentTemp.toFixed(0)}°C.`;
+                sentence = `Het is warm... ${currentTemp.toFixed(0)}°C.`;
+                detail = ``;
                 break;
 
             case currentTemp >= numericTextTemp + 5:
                 mood = 'neutraal';
                 environment = 'zonnig';
-                sentence = 'Het is aangenaam.';
-                detail = ` De temperatuur is nu ${currentTemp.toFixed(0)}°C.`;
+                sentence = `Het is aangenaam. ${currentTemp.toFixed(0)}°C.`;
+                detail = ``;
                 break;
 
             case currentTemp >= numericTextTemp - 5 && currentTemp <= numericTextTemp + 5:
                 mood = 'blij';
                 environment = 'neutraal';
-                sentence = 'Perfect weer!';
-                detail = ` De temperatuur is nu ${currentTemp.toFixed(0)}°C.`;
+                sentence = `Perfect weer! ${currentTemp.toFixed(0)}°C.`;
+                detail = ``;
                 break;
 
             case currentTemp <= numericTextTemp - 15:
                 mood = 'boos';
                 environment = 'koud';
-                sentence = 'Het is veel te koud!';
-                detail = ` De temperatuur is nu ${currentTemp.toFixed(0)}°C.`;
+                sentence = `Het is veel te koud! ${currentTemp.toFixed(0)}°C.`;
+                detail = ``;
                 break;
 
             case currentTemp <= numericTextTemp - 10:
                 mood = 'verdrietig';
                 environment = 'koud';
-                sentence = 'Het is behoorlijk koud.';
-                detail = ` De temperatuur is nu ${currentTemp.toFixed(0)}°C.`;
+                sentence = `Het is behoorlijk koud, ${currentTemp.toFixed(0)}°C.`;
+                detail = ` ${numericTextTemp}°C is ideaal voor de ${name}!`;
                 break;
 
             case currentTemp <= numericTextTemp - 5:
                 mood = 'neutraal';
                 environment = 'koud';
-                sentence = 'Het is een beetje fris.';
-                detail = ` De temperatuur is nu ${currentTemp.toFixed(0)}°C.`;
+                sentence = `Het is een beetje fris. ${currentTemp.toFixed(0)}°C.`;
+                detail = ``;
                 break;
         }
     }
-
     onMount(() => {
         getWeather(); 
     });
