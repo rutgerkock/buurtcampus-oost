@@ -76,7 +76,6 @@ fieldset {
 .question{
     display: grid;
     grid-template-columns: 1.5em 1fr;
-    grid-template-rows: auto auto;
     grid-template-areas: 
         'radio1 question1' 
         'radio2 question2'
@@ -152,6 +151,7 @@ fieldset {
     border: 2px solid var(--invalid-color-red);
     background-color: #fffcfc;
 }
+
 input[type='submit'] {
     border-radius: 2em;
     padding: 0.4em 1em;
@@ -165,9 +165,11 @@ input[type='submit'] {
     width: 8rem;
     margin: .5em 0;
 }
+
 input[type='submit']:hover {
     background-color: var(--main-color-orange);
 }
+
 input,
 textarea {
     font-family: var(--paragraph-font);
