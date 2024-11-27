@@ -28,28 +28,39 @@
     const currentTemp = weather.main.temp;
 
 
-    if (currentTemp > numericTextTemp + 8) {
-        mood = 'blij';
-        environment = 'fel';
-        sentence = `Het is ${currentTemp.toFixed(1)}°C, heet!`;
-        detail = ` Te warm voor de ${name}! ${numericTextTemp}°C is ideaal.`;
-    } else if (currentTemp >= numericTextTemp - 5 && currentTemp <= numericTextTemp + 5) {
-        mood = 'blij';
-        environment = 'zonnig';
-        sentence = `Het is ${currentTemp.toFixed(1)}°C, aangenaam weertje!`;
-        detail = ` Bevalt de ${name} goed.`;
-    } else if (currentTemp < numericTextTemp - 8) {
-        mood = 'blij';
-        environment = 'neutraal';
-        sentence = `Het is ${currentTemp.toFixed(1)}°C, te koud!`;
-        detail = ` Te koud voor de ${name}! ${numericTextTemp}°C is ideaal.`;
-    } else {
-        mood = 'blij';
-        environment = 'neutraal';
-        sentence = `Het is ${currentTemp.toFixed(1)}°C!`;
-        detail = ` Prima voor de ${name}! ${numericTextTemp}°C is ideaal.`;
+    let tempDifference = currentTemp - numericTextTemp;
+
+    switch (true) {
+        case tempDifference > 8:
+            mood = 'blij';
+            environment = 'fel';
+            sentence = `Het is ${currentTemp.toFixed(1)}°C, heet!`;
+            detail = `Te warm voor de ${name}! ${numericTextTemp}°C is ideaal.`;
+            break;
+
+        case tempDifference >= -5 && tempDifference <= 5:
+            mood = 'blij';
+            environment = 'zonnig';
+            sentence = `Het is ${currentTemp.toFixed(1)}°C, aangenaam weertje!`;
+            detail = `Bevalt de ${name} goed.`;
+            break;
+
+        case tempDifference < -8:
+            mood = 'blij';
+            environment = 'neutraal';
+            sentence = `Het is ${currentTemp.toFixed(1)}°C, te koud!`;
+            detail = `Te koud voor de ${name}! ${numericTextTemp}°C is ideaal.`;
+            break;
+
+        default:
+            mood = 'blij';
+            environment = 'neutraal';
+            sentence = `Het is ${currentTemp.toFixed(1)}°C!`;
+            detail = `Prima voor de ${name}! ${numericTextTemp}°C is ideaal.`;
+            break;
     }
 }
+
 
     onMount(() => {
         getWeather(); 
