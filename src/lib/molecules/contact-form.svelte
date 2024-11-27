@@ -23,7 +23,7 @@
                 value="workshop"
             />
     </fieldset>
-    <fieldset>
+    <div class="fields-container">
         <label for="name">Voornaam:</label>
         <input type="text" id="name" name="name" placeholder="Voer je voornaam in" required/>
 
@@ -46,7 +46,7 @@
             placeholder="Typ hier je bericht"
             required
         ></textarea>
-    </fieldset>
+    </div>
 
     <input type="submit" value="Verzenden" />
 
@@ -59,42 +59,50 @@ form {
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: .8em;
+    gap: 1.25em;
     margin-top: 2rem;
     color: var(--card-color-green);
     font-family: var(--sub-header-font);
 }
-fieldset{
+
+fieldset {
     display: flex;
     flex-direction: column;
     border: none;
     gap: .5em;
     transition: all .2s;
 }
+
 .question{
     display: grid;
     grid-template-columns: 1.5em 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto auto;
     grid-template-areas: 
         'radio1 question1' 
         'radio2 question2'
     ;
 }
+
 .question legend{
     padding: .5em 0;
 }
+
 .question input:nth-of-type(1) {
     grid-area: radio1;
 }
+
 .question input:nth-of-type(2) {
     grid-area: radio2;
 }
+
 .question label:nth-of-type(1) {
     grid-area: question1;
 }
+
 .question label:nth-of-type(2) {
     grid-area: question2;
 }
+
 .radio-question{
     grid-area: radio;
     width: 1.5em;
@@ -103,9 +111,19 @@ fieldset{
     margin-right: .5em;
     cursor: pointer;
 }
-fieldset input[type='text'],
-fieldset input[type='email'],
-fieldset textarea { 
+
+.fields-container label {
+    display: block;
+    margin-bottom: 0.5em; 
+}
+
+.fields-container input {
+    margin-bottom: 1.5em;
+}
+
+.fields-container input[type='text'],
+.fields-container input[type='email'],
+.fields-container textarea { 
     border: none;
     padding: 0.5rem;
     border-radius: var(--border-card);
@@ -113,24 +131,24 @@ fieldset textarea {
 }
 
 /* form focus styling  */
-fieldset input[type='text']:focus,
-fieldset input[type='email']:focus,
-fieldset textarea:focus { 
+.fields-container input[type='text']:focus,
+.fields-container input[type='email']:focus,
+.fields-container textarea:focus { 
     background-color: lightgoldenrodyellow;
 }
 
 /* form focus valid  */
-fieldset input[type='text']:valid,
-fieldset input[type='email']:valid,
-fieldset textarea:valid { 
+.fields-container input[type='text']:valid,
+.fields-container input[type='email']:valid,
+.fields-container textarea:valid { 
     border: 2px solid var(--main-color-green);
     background-color: rgb(237 255 237);
 }
 
 /* form focus invalid  */
-fieldset input[type='text']:user-invalid,
-fieldset input[type='email']:user-invalid,
-fieldset textarea:user-invalid { 
+.fields-container input[type='text']:user-invalid,
+.fields-container input[type='email']:user-invalid,
+.fields-container textarea:user-invalid { 
     border: 2px solid var(--invalid-color-red);
     background-color: #fffcfc;
 }
