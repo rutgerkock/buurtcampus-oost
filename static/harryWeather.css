@@ -1,6 +1,6 @@
 .stekjes_detail aside {
     right: 10rem;
-    bottom: -10rem;
+    bottom: -14rem;
     color: black;
     z-index: 0;
     display: flex;
@@ -19,6 +19,7 @@
     min-height: 4rem;
     align-items: center;
     justify-content: center;
+    height: min-content;
 }
 
 .stekjes_detail .weather-bubble:after {
@@ -66,6 +67,7 @@ aside {
     top: -1.25rem;
     left: 0.5rem;
     font-size: .8rem;
+    position: absolute;
 }
 
 .weather-bubble:after {
@@ -106,26 +108,26 @@ aside {
     filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
     position: absolute;
     rotate: -40deg;
-    right: -9rem;
+    right: -13rem;
     animation: appear 300ms ease-in-out 800ms forwards;
 }
 
 @keyframes appear {
     0% {
         rotate: -40deg ;
-        right: -9rem;
+        right: -13rem;
     }
     100% {
         rotate: -18deg ;
-        right: -3rem;
+        right: -1rem;
     }
 }
 
 @keyframes appearStekje {
     0% {
-        bottom: -10rem;
+        bottom: -14rem;
     }
     100% {
-        bottom: 0.5rem;
+        bottom: -2rem;
     }
 }
