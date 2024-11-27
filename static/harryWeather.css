@@ -1,5 +1,4 @@
 .stekjes_detail aside {
-    position: absolute;
     right: 10rem;
     bottom: -10rem;
     color: black;
@@ -12,9 +11,9 @@
 .stekjes_detail .cartoon{
     width: 10rem;
     filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
-    position: absolute;
     rotate: 8deg;
 }
+
 .stekjes_detail .weather-bubble {
     display: flex;
     min-height: 4rem;
@@ -42,7 +41,6 @@ aside {
     position: absolute;
     right: 0;
     color: black;
-    z-index: 999;
 }
 
 .weather-bubble {
@@ -65,7 +63,6 @@ aside {
     font-style: italic;
     font-weight: 600;
     color: pink;
-    position: absolute;
     top: -1.25rem;
     left: 0.5rem;
     font-size: .8rem;

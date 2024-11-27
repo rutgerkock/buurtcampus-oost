@@ -16,8 +16,8 @@
     let environment = 'blij';
     let sentence = 'Ik ben even in de war';
     let detail = '';
-    const numericTextTemp = parseFloat(textTemp) || 20;
 
+    const numericTextTemp = parseFloat(textTemp) || 20;
 
     async function getWeather() {
     const res = await fetch(
@@ -26,7 +26,6 @@
     weather = await res.json();
 
     const currentTemp = weather.main.temp;
-
 
 
     if (currentTemp > numericTextTemp + 8) {
@@ -40,8 +39,8 @@
         sentence = `Het is ${currentTemp.toFixed(1)}°C, aangenaam weertje!`;
         detail = ` Bevalt de ${name} goed.`;
     } else if (currentTemp < numericTextTemp - 8) {
-        mood = 'verdrietig';
-        environment = 'koud';
+        mood = 'blij';
+        environment = 'neutraal';
         sentence = `Het is ${currentTemp.toFixed(1)}°C, te koud!`;
         detail = ` Te koud voor de ${name}! ${numericTextTemp}°C is ideaal.`;
     } else {
@@ -50,12 +49,12 @@
         sentence = `Het is ${currentTemp.toFixed(1)}°C!`;
         detail = ` Prima voor de ${name}! ${numericTextTemp}°C is ideaal.`;
     }
-
 }
 
     onMount(() => {
         getWeather(); 
     });
+    
 </script>
 
 {#if weather}

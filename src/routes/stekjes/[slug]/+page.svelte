@@ -4,7 +4,6 @@
     import { HarryWeather } from '$lib/index.js';
     let mood; 
     let environment; 
-
 </script>
 
 <section class="stekjes_detail">
