@@ -38,7 +38,9 @@ html {
 
 	--text-color-white: #fff;
 	--text-color-black: #000;
+
 	--invalid-color-red: #ff0000;
+	--input-border-color: #B37400;
 
 	--header-font: 'Poppins-Black', sans-serif;
 	--sub-header-font: 'Poppins-Bold', sans-serif;
