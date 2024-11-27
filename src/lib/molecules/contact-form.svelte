@@ -13,16 +13,16 @@
     </fieldset>
 
     <div class="fields-container">
-        <label for="name">Voornaam:</label>
+        <label for="name">Voornaam:<span>*</span></label>
         <input type="text" id="name" name="name" placeholder="Voer je voornaam in" required />
         
-        <label for="lastname">Achternaam:</label>
+        <label for="lastname">Achternaam:<span>*</span></label>
         <input type="text" id="lastname" name="lastname" placeholder="Voer je achternaam in" required />
         
-        <label for="email">E-mail:</label>
+        <label for="email">E-mail:<span>*</span></label>
         <input type="email" id="email" name="email" placeholder="Voer je e-mailadres in" required />
         
-        <label for="message">Stel je vraag of vertel voor welke workshop je je wilt aanmelden!</label>
+        <label for="message">Stel je vraag of vertel voor welke workshop je je wilt aanmelden!<span>*</span></label>
         <textarea id="message" name="message" cols="30" rows="10" placeholder="Typ hier je bericht" required></textarea>
     </div>
 
