@@ -329,9 +329,8 @@
 
 <div class="harry">
     <!-- moet naar cartoon -->
-    <svg class="cartoon" xmlns="http://www.w3.org/2000/svg" version="1.1"  viewBox="0 0 371 533">
-      <!-- Generator: Adobe Illustrator 29.1.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 142)  -->
-      <defs>
+    <svg class="cartoon" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 371 533" style="overflow: visible;">
+        <defs>
         <style>
           .st0, .st1 {
             fill: #9e4b2d;

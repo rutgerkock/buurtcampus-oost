@@ -199,31 +199,31 @@
 /* ANIMATIONS */
 @keyframes wave {
     0% {    
-        transform: translateY(-20px) translateX(-10px) rotate(-55deg);
+        rotate: 0;
     }
 
     1% {
-        transform: translateY(-20px) translateX(-10px) rotate(-55deg);
+        rotate: 0;
     }
 
-    6% {
-        transform: translateY(-20px) translateX(-10px) rotate(45deg);
+    3% {
+        rotate: 65deg;
+    }
+
+    5% {
+        rotate: 25deg;
     }
 
     7% {
-        transform: translateY(-20px) translateX(-10px) rotate(25deg);
-    }
-
-    8% {
-        transform: translateY(-20px) translateX(-10px) rotate(45deg);
+        rotate: 65deg;
     }
 
     11% {
-        transform: translateY(-20px) translateX(-10px) rotate(-55deg);    
+        rotate: 0;
     }
 
     100% {
-        transform: translateY(-20px) translateX(-10px) rotate(-55deg);
+        rotate: 0;
     }
 }
 @keyframes angry {
