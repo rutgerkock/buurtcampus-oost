@@ -29,34 +29,21 @@
     transition: 200ms;
 }
 .harry {
-    .fluit, .sip, .dorst, .blij, .neutraal-2, .gek, .sangry, .neutraal, .bril, .sombrero, .sjaal, .billen{
+    .fluit, .sip, .dorst, .blij, .neutraal-2, .gek, .angry, .neutraal, .zonnebril, .sombrero, .sjaal, .billen, .plantWinter,
+    .want_l, .want_r, .breuk, .oog_boos_r, .oog_boos_l {
         opacity: 0;    
     }
     .sangry, .neutraal{
         transform-origin: center;
         animation: blink 10s infinite;
     }
-    .arm_l, .arm_r ,.been_l ,.been_r {
-        stroke-width: 6px;
-        stroke-miterlimit: 10;
-        fill: #c17052;
-        stroke: black;
-     }
-    .arm_l{
-        transform: translateY(-20px) translateX(-10px) rotate(-55deg);
-        transform-origin: right center;
-    }
-    .arm_r{
-        transform: translateY(-20px) translateX(10px) rotate(55deg);
-        transform-origin: left center;
-    }
 }
 .harry[data-mood="neutraal"]{
-    .neutraal-2{
-        opacity: 1;
-    }
     .neutraal{
         opacity: 1;
+    }
+    .blij {
+        opacity: 0;
     }
     .arm_l {
         animation: wave 20s infinite;
@@ -64,9 +51,6 @@
 }
 .harry[data-mood="blij"]{
     .blij {
-        opacity: 1;
-    }
-    .neutraal{
         opacity: 1;
     }
     .arm_l {
@@ -85,7 +69,7 @@
     .sip{
         opacity: 1;
     }
-    .sangry{
+    .angry{
         opacity: 1;
     }
     .plant{
@@ -116,16 +100,20 @@
     .sip {
             opacity: 1;
     }
-    .sangry {
+    .angry {
         opacity: 1;
-
+/* 
         .oog_l {
             transform: rotate(45deg);
         }
 
         .oog_r {
             transform: rotate(-45deg);
-        }
+        } */
+    }
+    .oog_boos_r,
+    .oog_boos_l {
+        opacity: 1;
     }
     .pot {
         animation: angry 0.3s infinite;
@@ -190,7 +178,12 @@
     }
 }
 .harry[data-environment="koud"]{
-    .sjaal{
+    /* .sjaal{
+        opacity: 1;
+    } */
+    .plantWinter,
+    .want_l,
+    .want_r {
         opacity: 1;
     }
     .mond{
@@ -198,7 +191,7 @@
     }
 }
 .harry[data-environment="fel"]{
-    .bril{
+    .zonnebril{
         opacity: 1;
     }
 }
