@@ -4,7 +4,7 @@
 
     // Details
     export let textTemp;
-    export let name;
+    // export let name;
 
     // Weather
     let city = 'Amsterdam';
@@ -16,7 +16,7 @@
     let sentence = 'Ik ben even in de war';
     let detail = '';
 
-    const numericTextTemp = parseFloat(textTemp) || 20;
+    const numericTextTemp = parseFloat(textTemp) || 25;
 
     async function getWeather() {
         const res = await fetch(
