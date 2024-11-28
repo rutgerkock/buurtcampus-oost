@@ -11,7 +11,7 @@
     let weather;
 
     // Harry
-    let mood = 'ass';
+    let mood = 'twerk';
     let environment = 'neutraal';
     let sentence = 'Ik ben even in de war';
     let detail = '';
@@ -25,56 +25,62 @@
         weather = await res.json();
 
         const currentTemp = weather.main.temp;
+        const currentRain = weather.rain ? weather.rain['1h'] : null;
+
         let tempDifference = currentTemp - numericTextTemp;
+
+        function addRainSentence(base) {
+            return base + (currentRain ? ` Ook nog ${currentRain.toFixed(1)}mm regen per uur!` : '');
+        }
 
         switch (true) {
             case currentTemp >= numericTextTemp + 15:
                 mood = 'boos';
                 environment = 'zonnig';
-                sentence = 'Het is echt te heet!';
-                detail = ` De temperatuur is nu ${currentTemp.toFixed(0)}°C.`;
+                sentence = addRainSentence(`Het is echt te heet! ${currentTemp.toFixed(0)}°C.`);
+                detail = ` De ${name} vindt dit echt te warm.`;
                 break;
 
             case currentTemp >= numericTextTemp + 10:
                 mood = 'verdrietig';
                 environment = 'zonnig';
-                sentence = 'Het is warm...';
-                detail = ` De temperatuur is nu ${currentTemp.toFixed(0)}°C.`;
+                sentence = addRainSentence(`Het is warm... ${currentTemp.toFixed(0)}°C.`);
+                detail = ` De ${name} voelt zich niet helemaal comfortabel.`;
                 break;
 
             case currentTemp >= numericTextTemp + 5:
                 mood = 'neutraal';
                 environment = 'zonnig';
-                sentence = 'Het is aangenaam.';
-                detail = ` De temperatuur is nu ${currentTemp.toFixed(0)}°C.`;
+                sentence = addRainSentence(`Het is aangenaam. ${currentTemp.toFixed(0)}°C.`);
+                detail = ` De ${name} vindt het wel aangenaam.`;
                 break;
 
             case currentTemp >= numericTextTemp - 5 && currentTemp <= numericTextTemp + 5:
                 mood = 'blij';
                 environment = 'neutraal';
-                sentence = 'Perfect weer!';
-                detail = ` De temperatuur is nu ${currentTemp.toFixed(0)}°C.`;
+                sentence = addRainSentence(`Perfect weer! ${currentTemp.toFixed(0)}°C.`);
+                detail = ` De ${name} is helemaal tevreden.`;
                 break;
 
             case currentTemp <= numericTextTemp - 15:
                 mood = 'boos';
                 environment = 'koud';
-                sentence = 'Het is veel te koud!';
-                detail = ` De temperatuur is nu ${currentTemp.toFixed(0)}°C.`;
+                sentence = addRainSentence(`Het is veel te koud! ${currentTemp.toFixed(0)}°C.`);
+                detail = ` De ${name} heeft het veel te koud.`;
                 break;
 
             case currentTemp <= numericTextTemp - 10:
                 mood = 'verdrietig';
                 environment = 'koud';
-                sentence = 'Het is behoorlijk koud.';
-                detail = ` De temperatuur is nu ${currentTemp.toFixed(0)}°C.`;
+                sentence = addRainSentence(`Het is behoorlijk koud, ${currentTemp.toFixed(0)}°C.`);
+                detail = ` De ${name} heeft het liever iets warmer.`;
                 break;
 
             case currentTemp <= numericTextTemp - 5:
                 mood = 'neutraal';
                 environment = 'koud';
-                sentence = 'Het is een beetje fris.';
-                detail = ` De temperatuur is nu ${currentTemp.toFixed(0)}°C.`;
+                sentence = addRainSentence(`Het is een beetje fris. ${currentTemp.toFixed(0)}°C.`);
+                detail = ` De ${name} vindt het net te frisjes.`;
                 break;
         }
     }
